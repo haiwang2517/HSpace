@@ -4,6 +4,16 @@ server:
 spring:
   application:
     name: authorization-server
-
   profiles:
     active: dev
+
+jasypt:
+  encryptor:
+    # 配置加密算法
+    algorithm: PBEWithMD5AndDES
+    iv-generator-classname: org.jasypt.iv.RandomIvGenerator
+    property:
+      # 算法识别前缀(当算法发现配置文件中的值以这前缀开始，后缀结尾时，会使用指定算法解密)
+      prefix: ENC(
+      # 算法识别后缀
+      suffix: )

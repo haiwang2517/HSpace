@@ -1,3 +1,34 @@
 logging:
   level:
+    # 打印请求地址路径
     org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: trace
+
+spring:
+  datasource:
+    url: jdbc:mysql://nj-cdb-jq7pe3t9.sql.tencentcdb.com:63864/hspace?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+    username: ENC(swRzTLLsVLpPjsB3gmvg9Lrd3vh4MIbW)
+    password: ENC(cuptOCJJWBXtWGAJtcDYAcOB6jy07/z+7Ig7uhl45jA=)
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      # 线程池名称
+      pool-name: HikariCp
+      # 最小空闲连接
+      minimum-idle: 5
+      # 最大连接
+      maximum-pool-size: 15
+      # 空闲连接存活最大时间, 600000 (10分钟)
+      idle-timeout: 600000
+      # 自动提交
+      auto-commit: true
+      # 控制连接池中最长生命周期时间, 1800000(30分钟)
+      max-lifetime: 1800000
+      # 连接超时时间 30000 (30秒)
+      connection-timeout: 30000
+      # 测试连接
+      connection-test-query: select now()
+
+mybatis-plus:
+  configuration:
+    # 打印日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

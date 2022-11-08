@@ -1,16 +1,14 @@
 package com.ken.hspace.authorization.config;
 
+import com.ken.hspace.authorization.service.UserServiceImpl;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 /**
@@ -19,10 +17,12 @@ import org.springframework.security.web.SecurityFilterChain;
  */
 @Configuration(proxyBeanMethods = false)
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class SecurityConfig {
 
+  private final UserServiceImpl userServiceImpl;
   /**
-   * 定义密码加密方式
+   * 定义用户密码加密方式
    *
    * @return
    */
@@ -44,24 +44,15 @@ public class SecurityConfig {
     http.authorizeHttpRequests(
             (authorize) ->
                 authorize
-                    .antMatchers("/oauth2/**", "/login")
+                    .antMatchers("/oauth2/**", "/userinfo", "/login")
                     .permitAll()
                     .anyRequest()
                     .authenticated())
         .formLogin(form -> form.loginPage("/login").failureForwardUrl("/toError"))
+        .userDetailsService(userServiceImpl)
         .csrf()
         .disable();
 
     return http.build();
-  }
-
-  @Bean
-  public UserDetailsService userDetailsService() {
-    String encode = getPasswordEncoder().encode("123");
-    UserDetails user = User.withUsername("user").password(encode).roles("USER").build();
-    UserDetails userDetails =
-        User.withUsername("admin").password(encode).roles("USER", "ADMIN").build();
-
-    return new InMemoryUserDetailsManager(user, userDetails);
   }
 }
