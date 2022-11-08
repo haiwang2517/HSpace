@@ -1,2 +1,6 @@
 /authorization-server/target/
 /authorization-server/.idea/
+/authorization-server/*.iml
+/resource-server/target/
+/resource-server/.idea/
+/resource-server/*.iml

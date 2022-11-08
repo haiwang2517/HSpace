@@ -1,0 +1,11 @@
+logging:
+  level:
+    # 打印请求地址路径
+    org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: trace
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://127.0.0.1:8080
+
