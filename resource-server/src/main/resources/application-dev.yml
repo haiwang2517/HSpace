@@ -8,4 +8,10 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://127.0.0.1:8080
-
+feign:
+  client:
+    config:
+      default:
+        # 超时时间10s
+        connect-timeout: 10000
+        read-timeout: 10000
