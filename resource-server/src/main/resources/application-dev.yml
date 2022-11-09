@@ -6,6 +6,7 @@ spring:
   security:
     oauth2:
       resourceserver:
+        # 验证token方式, 会调用/oauth2/jws端点
         jwt:
           issuer-uri: http://127.0.0.1:8080
 feign:
