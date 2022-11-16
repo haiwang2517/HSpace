@@ -29,6 +29,7 @@ csdn参考地址: https://blog.csdn.net/qq_37182370/article/details/124822587?sp
 ```shell script
 #请求url获取Code - GET
 http://127.0.0.1:8080/oauth2/authorize?client_id=client_id&response_type=code&scope=all&redirect_uri=http://www.baidu.com
+http://localhost:8080/oauth2/authorize?response_type=code&client_id=client_id&scope=all&redirect_uri=http://www.baiud.com
 
 #获取token -POST
 curl --location --request POST 'http://localhost:8080/oauth2/token' \

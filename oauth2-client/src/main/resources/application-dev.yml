@@ -1,0 +1,27 @@
+logging:
+  level:
+    # 打印请求地址路径
+    org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: trace
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          hspace:
+            client-id: hspace-client
+            client-secret: client_secret
+            client-name: 测试客户端
+            scope:
+              - all
+            authorization-grant-type: authorization_code
+#            client-authentication-method: basic
+            redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
+            provider: oauth-provider
+        provider:
+          oauth-provider:
+            authorization-uri: http://haiyinlong.com:8080/oauth2/authorize
+            token-uri: http://haiyinlong.com:8080/oauth2/token
+            user-info-uri: http://haiyinlong.com:8080/userinfo
+            user-name-attribute: name
+
+
