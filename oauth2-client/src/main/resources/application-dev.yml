@@ -8,20 +8,23 @@ spring:
       client:
         registration:
           hspace:
-            client-id: hspace-client
+            client-id: hspace-home
             client-secret: client_secret
             client-name: 测试客户端
             scope:
-              - all
+              - openid
+              - profile
+              - message.read
+              - message.write
             authorization-grant-type: authorization_code
             client-authentication-method: client_secret_basic
             redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
             provider: oauth-provider
         provider:
           oauth-provider:
-            authorization-uri: http://haiyinlong.com:8080/oauth2/authorize
-            token-uri: http://haiyinlong.com:8080/oauth2/token
-            user-info-uri: http://haiyinlong.com:8080/userinfo
+            authorization-uri: http://haiyinlong-test.com:8080/oauth2/authorize
+            token-uri: http://haiyinlong-test.com:8080/oauth2/token
+            user-info-uri: http://haiyinlong-test.com:8080/userinfo
             user-name-attribute: name
 
 

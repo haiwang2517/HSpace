@@ -16,7 +16,7 @@ import org.springframework.security.web.SecurityFilterChain;
  * https://docs.spring.io/spring-authorization-server/docs/current/reference/html/getting-started.html
  */
 @Configuration(proxyBeanMethods = false)
-@EnableWebSecurity
+@EnableWebSecurity(debug = true)
 @RequiredArgsConstructor
 public class SecurityConfig {
 

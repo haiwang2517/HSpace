@@ -8,7 +8,7 @@ spring:
       resource-server:
         # 验证token方式, 会调用/oauth2/jws端点
         jwt:
-          issuer-uri: http://haiyinlong.com:8080
+          issuer-uri: http://haiyinlong-test.com:8080
 feign:
   client:
     config:

@@ -27,7 +27,7 @@ public class RegisteredClientRepositoryTest {
   public void addClient() {
     RegisteredClient registeredClient =
         RegisteredClient.withId(UUID.randomUUID().toString())
-            .clientId("hspace-client")
+            .clientId("hspace-home")
             .clientSecret(passwordEncoder.encode("client_secret"))
             .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
             .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
@@ -36,7 +36,9 @@ public class RegisteredClientRepositoryTest {
             .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
             .redirectUri("http://haiyinlong.com:8082/login/oauth2/code/hspace")
             .scope(OidcScopes.OPENID)
-            .scope("all")
+            .scope(OidcScopes.PROFILE)
+            .scope("message.read")
+            .scope("message.write")
             .clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
             .tokenSettings(
                 TokenSettings.builder()
