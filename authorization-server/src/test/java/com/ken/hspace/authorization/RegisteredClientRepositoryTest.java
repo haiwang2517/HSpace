@@ -27,14 +27,22 @@ public class RegisteredClientRepositoryTest {
   public void addClient() {
     RegisteredClient registeredClient =
         RegisteredClient.withId(UUID.randomUUID().toString())
-            .clientId("hspace-home")
+            .clientId("hspace-baidu")
             .clientSecret(passwordEncoder.encode("client_secret"))
-            .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
+                .clientAuthenticationMethods(s -> {
+              s.add(ClientAuthenticationMethod.CLIENT_SECRET_BASIC);
+              s.add(ClientAuthenticationMethod.CLIENT_SECRET_POST);
+              s.add(ClientAuthenticationMethod.CLIENT_SECRET_JWT);
+                })
             .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
             .authorizationGrantType(AuthorizationGrantType.PASSWORD)
             .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
             .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
-            .redirectUri("http://haiyinlong.com:8082/login/oauth2/code/hspace")
+                .redirectUris( url ->{
+                  url.add("http://haiyinlong.com:8082/login/oauth2/code/hspace");
+                  url.add("http://haiyinlong.com:8082/login/oauth2/code/messaging-client-model");
+                  url.add("http://www.baidu.com");
+                })
             .scope(OidcScopes.OPENID)
             .scope(OidcScopes.PROFILE)
             .scope("message.read")

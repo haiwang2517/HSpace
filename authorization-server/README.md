@@ -1,7 +1,6 @@
 ##搭建步骤
 > 官方地址：https://docs.spring.io/spring-authorization-server/docs/current/reference/html/getting-started.html
->
-csdn参考地址: https://blog.csdn.net/qq_37182370/article/details/124822587?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-124822587-blog-125154592.pc_relevant_layerdownloadsortv1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-124822587-blog-125154592.pc_relevant_layerdownloadsortv1&utm_relevant_index=3
+> csdn参考地址: https://blog.csdn.net/qq_37182370/article/details/124822587?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-124822587-blog-125154592.pc_relevant_layerdownloadsortv1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-124822587-blog-125154592.pc_relevant_layerdownloadsortv1&utm_relevant_index=3
 > https://blog.csdn.net/m0_67645544/article/details/125154592?spm=1001.2101.3001.6650.4&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-4-125154592-blog-125133405.pc_relevant_aa&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-4-125154592-blog-125133405.pc_relevant_aa&utm_relevant_index=5        
 > OAuth 2.0 的四种方式 https://www.ruanyifeng.com/blog/2019/04/oauth-grant-types.html
 

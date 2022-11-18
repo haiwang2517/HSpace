@@ -44,7 +44,7 @@ public class SecurityConfig {
     http.authorizeHttpRequests(
             (authorize) ->
                 authorize
-                    .antMatchers("/oauth2/**", "/userinfo", "/login")
+                    .antMatchers("/oauth2/**", "/userinfo", "/favicon.ico", "/login")
                     .permitAll()
                     .anyRequest()
                     .authenticated())

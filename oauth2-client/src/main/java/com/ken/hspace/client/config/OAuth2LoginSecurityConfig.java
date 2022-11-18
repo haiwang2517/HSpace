@@ -24,7 +24,8 @@ public class OAuth2LoginSecurityConfig {
 
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    http.authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
+    http.authorizeHttpRequests(authorize -> authorize.antMatchers("/favicon.ico").permitAll()
+                    .anyRequest().authenticated())
         .oauth2Login(
             oauth2 ->
                 oauth2.authorizationEndpoint(
