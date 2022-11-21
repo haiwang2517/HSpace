@@ -23,7 +23,6 @@ spring:
             authorization-uri: http://haiyinlong-test.com:8080/oauth2/authorize
             token-uri: http://haiyinlong-test.com:8080/oauth2/token
             user-info-uri: http://haiyinlong-test.com:8080/userinfo
-            user-name-attribute: name
             jwk-set-uri: http://haiyinlong-test.com:8080/oauth2/jwks
 
 
