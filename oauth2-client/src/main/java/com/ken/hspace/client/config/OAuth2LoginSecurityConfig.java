@@ -31,7 +31,8 @@ public class OAuth2LoginSecurityConfig {
                 oauth2.authorizationEndpoint(
                     authorization ->
                         authorization.authorizationRequestResolver(
-                            authorizationRequestResolver(this.clientRegistrationRepository))));
+                            authorizationRequestResolver(this.clientRegistrationRepository))))
+            .oauth2Client();
     http.httpBasic().disable();
     return http.build();
   }

@@ -115,7 +115,7 @@ public class AuthorizationServerConfig {
 
   @Bean
   public ProviderSettings providerSettings() {
-    return ProviderSettings.builder().issuer("http://haiyinlong-tset.com:8080").build();
+    return ProviderSettings.builder().issuer("http://haiyinlong-test.com:8080").build();
   }
 
   static class RowMapper extends JdbcOAuth2AuthorizationService.OAuth2AuthorizationRowMapper {

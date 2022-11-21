@@ -6,6 +6,8 @@ import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
+
 @RestController
 public class ResourceController {
     @PreAuthorize("hasAuthority('SCOPE_all')")
@@ -16,6 +18,11 @@ public class ResourceController {
 
     @GetMapping("/u")
     public String getResourceUser(@AuthenticationPrincipal Jwt principal){
+        return principal.toString();
+    }
+
+    @GetMapping("/user")
+    public String getResourceUser(Principal principal){
         return principal.toString();
     }
 
