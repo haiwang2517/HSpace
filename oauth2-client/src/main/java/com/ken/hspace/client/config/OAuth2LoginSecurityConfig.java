@@ -14,6 +14,8 @@ import org.springframework.security.web.SecurityFilterChain;
 
 import java.util.function.Consumer;
 
+import static org.springframework.security.config.Customizer.withDefaults;
+
 @AllArgsConstructor
 @Configuration
 @EnableWebSecurity(debug = true)
@@ -32,7 +34,7 @@ public class OAuth2LoginSecurityConfig {
                     authorization ->
                         authorization.authorizationRequestResolver(
                             authorizationRequestResolver(this.clientRegistrationRepository))))
-            .oauth2Client();
+            .oauth2Client(withDefaults());
     http.httpBasic().disable();
     return http.build();
   }
