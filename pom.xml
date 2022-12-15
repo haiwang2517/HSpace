@@ -12,5 +12,6 @@
         <module>authorization-server</module>
         <module>resource-server</module>
         <module>oauth2-client</module>
+        <module>mqtt-demo</module>
     </modules>
 </project>

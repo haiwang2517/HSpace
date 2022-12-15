@@ -1,0 +1,12 @@
+## MQTT##
+hspace:
+  mqtt:
+    host: tcp://127.0.0.1:1883
+    user-name: client
+    password: 123
+    qos: 1
+    client-id: mqtt_client_demo
+    timeout: 100000
+    keepalive: 20
+    default-topic: hspace/default
+
